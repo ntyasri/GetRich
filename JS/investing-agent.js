@@ -6,7 +6,7 @@
 // 1. SCROLL ANIMATIONS
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-const API_URL = "https://YOUR_SPACE.hf.space/api/v1/prediction/YOUR_CHATFLOW_ID";
+const API_URL = "https://flowise-production-2afa.up.railway.app/api/v1/prediction/c16cb4ce-823b-48e3-b323-58d646584d6e";
 
 async function sendMessage() {
   const input = document.getElementById("userInput").value;
@@ -296,4 +296,5 @@ const backButton = document.querySelector('.back-button');
 backButton?.addEventListener('click', (e) => {
     // Smooth transition handled by browser default
 });
+
 
