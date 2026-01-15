@@ -5,28 +5,6 @@
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // 1. SCROLL ANIMATIONS
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-const API_URL = "https://flowise-production-2afa.up.railway.app/api/v1/prediction/c16cb4ce-823b-48e3-b323-58d646584d6e";
-
-async function sendMessage() {
-  const input = document.getElementById("userInput").value;
-
-  const response = await fetch(API_URL, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      question: input
-    })
-  });
-
-  const result = await response.json();
-
-  document.getElementById("response").innerText =
-    result.text || "No response from AI";
-}
-
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -296,5 +274,6 @@ const backButton = document.querySelector('.back-button');
 backButton?.addEventListener('click', (e) => {
     // Smooth transition handled by browser default
 });
+
 
 
