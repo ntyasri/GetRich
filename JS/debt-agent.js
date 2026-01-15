@@ -3,6 +3,21 @@
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// 0. BOTPRESS INTEGRATION SETUP
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+// Botpress web chat is automatically initialized by the injected scripts
+// The Botpress widget will appear on the page automatically
+// You can access it via window.botpressWebChat when needed
+
+// Optional: Listen for Botpress chat events
+window.addEventListener('message', (e) => {
+    if (e.data.type === 'botpress:trigger') {
+        console.log('Botpress event received:', e.data);
+    }
+});
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // 1. SCROLL ANIMATIONS
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
