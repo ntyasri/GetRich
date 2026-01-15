@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build Your Safety Net – Saving | GetRich</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Logo in Top Right -->
+    <a href="index.html" class="logo-link logo-right">
+        <img src="images/getrich-logo.png" alt="GetRich Logo" class="logo">
+    </a>
+
+    <!-- Floating Gradient Orbs -->
+    <div class="gradient-shape shape-1"></div>
+    <div class="gradient-shape shape-2"></div>
+    <div class="gradient-shape shape-3"></div>
+
+    <!-- Back Navigation -->
+    <nav class="back-nav">
+        <div class="container">
+            <a href="index.html" class="back-button">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M12.5 5L7.5 10L12.5 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Back to Home</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+         HERO SECTION
+         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+    <section class="page-hero">
+        <div class="page-hero-content animate-on-scroll">
+            <h1>Build Your Safety Net</h1>
+            <p>Empowering you to create healthy saving habits that last a lifetime. Start building your financial security today.</p>
+        </div>
+    </section>
+
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+         AI SAVING ASSISTANT
+         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+    <section class="page-content ai-assistant-section">
+        <div class="container">
+            <div class="assistant-container">
+                <div class="section-header animate-on-scroll">
+                    <span class="section-tag">AI-POWERED</span>
+                    <h2 class="section-title">Your Saving Assistant</h2>
+                    <p class="section-subtitle">
+                        Get personalized saving advice tailored to your income, goals, and lifestyle.
+                    </p>
+                </div>
+                
+                <div class="ai-chatbot-ui animate-on-scroll">
+                    <div class="chatbot-header">
+                        <div class="chatbot-avatar">💰</div>
+                        <div class="chatbot-info">
+                            <h4>GetRich Saving Coach</h4>
+                            <p>● Ready to help</p>
+                        </div>
+                    </div>
+                    
+                    <div class="chat-messages" id="savingChatMessages">
+                        <div class="message bot">
+                            <div class="message-avatar">💰</div>
+                            <div class="message-content">
+                                Welcome to your personal saving journey! 🎯 I'm here to help you build financial security. 
+                                Let's start by understanding your saving goals. What would you like to save for?
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="chat-input-area">
+                        <input type="text" class="chat-input" placeholder="Tell me your saving goals..." id="savingChatInput">
+                        <button class="chat-send-btn" id="savingSendBtn">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+         SMART SAVING CARDS
+         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+    <section class="page-content">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag">KEY STRATEGIES</span>
+                <h2 class="section-title">Smart Saving Tips</h2>
+                <p class="section-subtitle">
+                    Proven strategies to help you save more and stress less.
+                </p>
+            </div>
+            
+            <div class="saving-cards-grid">
+                <div class="saving-card animate-on-scroll">
+                    <div class="saving-card-icon">🛡️</div>
+                    <h3>Emergency Fund</h3>
+                    <p>
+                        Aim for 3-6 months of expenses. Start small—even $500 can protect you from unexpected 
+                        bills. Automate monthly transfers to build it gradually without thinking about it.
+                    </p>
+                </div>
+                
+                <div class="saving-card animate-on-scroll">
+                    <div class="saving-card-icon">📊</div>
+                    <h3>50/30/20 Rule</h3>
+                    <p>
+                        Allocate 50% to needs, 30% to wants, and 20% to savings. This simple framework helps 
+                        balance enjoying life now while securing your future. Track and adjust as needed.
+                    </p>
+                </div>
+                
+                <div class="saving-card animate-on-scroll">
+                    <div class="saving-card-icon">🚫</div>
+                    <h3>Avoid Impulse Spending</h3>
+                    <p>
+                        Wait 24 hours before non-essential purchases. Use the "cost per use" method—divide 
+                        price by how many times you'll use it. Quality over quantity always wins.
+                    </p>
+                </div>
+                
+                <div class="saving-card animate-on-scroll">
+                    <div class="saving-card-icon">⚡</div>
+                    <h3>Automate Savings</h3>
+                    <p>
+                        Set up automatic transfers to your savings account right after payday. Treat savings 
+                        like a non-negotiable bill. What you don't see, you won't spend.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+         INTERACTIVE SAVINGS CALCULATOR
+         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+    <section class="page-content">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag">CALCULATOR</span>
+                <h2 class="section-title">See Your Future</h2>
+                <p class="section-subtitle">
+                    Discover how small actions today create big wealth tomorrow.
+                </p>
+            </div>
+            
+            <div class="savings-calculator animate-on-scroll">
+                <div class="calculator-inputs">
+                    <div class="calc-input-group">
+                        <label for="monthlyAmount">💰 Monthly Savings</label>
+                        <div class="slider-wrapper">
+                            <input type="range" id="monthlyAmount" min="10" max="1000" value="200" step="10">
+                            <span class="slider-value" id="monthlyValue">$200</span>
+                        </div>
+                    </div>
+                    
+                    <div class="calc-input-group">
+                        <label for="timeframe">⏰ Time Period (Years)</label>
+                        <div class="slider-wrapper">
+                            <input type="range" id="timeframe" min="1" max="30" value="10" step="1">
+                            <span class="slider-value" id="timeValue">10 years</span>
+                        </div>
+                    </div>
+                    
+                    <div class="calc-input-group">
+                        <label for="interestRate">📈 Interest Rate (%)</label>
+                        <div class="slider-wrapper">
+                            <input type="range" id="interestRate" min="0" max="12" value="5" step="0.5">
+                            <span class="slider-value" id="rateValue">5%</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="calculator-result">
+                    <div class="result-main">
+                        <div class="result-label">Future Value</div>
+                        <div class="result-amount" id="futureValue">$31,056</div>
+                    </div>
+                    <div class="result-breakdown">
+                        <div class="breakdown-item">
+                            <span>Total Invested:</span>
+                            <strong id="totalInvested">$24,000</strong>
+                        </div>
+                        <div class="breakdown-item">
+                            <span>Interest Earned:</span>
+                            <strong id="interestEarned" style="color: var(--success-accent);">$7,056</strong>
+                        </div>
+                    </div>
+                    <p class="result-insight" id="resultInsight">
+                        🎯 By saving $200/month for 10 years, you'll earn $7,056 in interest! That's 29% free money.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+         MONEY-SAVING CHALLENGES
+         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+    <section class="page-content">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag">CHALLENGES</span>
+                <h2 class="section-title">Save Like a Game</h2>
+                <p class="section-subtitle">
+                    Turn saving into fun challenges. Pick one and start today!
+                </p>
+            </div>
+            
+            <div class="challenge-cards-grid">
+                <div class="challenge-card animate-on-scroll" data-challenge="52week">
+                    <div class="challenge-badge">🏆 Popular</div>
+                    <h3>52-Week Challenge</h3>
+                    <div class="challenge-amount">Save $1,378</div>
+                    <p>Week 1: $1, Week 2: $2... Week 52: $52. Start small, end big!</p>
+                    <div class="challenge-progress">
+                        <div class="progress-mini"><div class="progress-fill" style="width: 15%;"></div></div>
+                        <span>Week 8 of 52</span>
+                    </div>
+                    <button class="challenge-btn" onclick="startChallenge('52week')">Continue Challenge</button>
+                </div>
+                
+                <div class="challenge-card animate-on-scroll" data-challenge="no-spend">
+                    <div class="challenge-badge">🔥 Trending</div>
+                    <h3>No-Spend Weekend</h3>
+                    <div class="challenge-amount">Save $150+</div>
+                    <p>One weekend per month with zero non-essential spending. Plan fun free activities!</p>
+                    <div class="challenge-progress">
+                        <div class="progress-mini"><div class="progress-fill" style="width: 25%;"></div></div>
+                        <span>3 of 12 completed</span>
+                    </div>
+                    <button class="challenge-btn" onclick="startChallenge('no-spend')">Start Challenge</button>
+                </div>
+                
+                <div class="challenge-card animate-on-scroll" data-challenge="latte">
+                    <div class="challenge-badge">☕ Classic</div>
+                    <h3>Latte Factor</h3>
+                    <div class="challenge-amount">Save $1,200/year</div>
+                    <p>Skip one $5 coffee/day for a month. Brew at home. Watch savings multiply!</p>
+                    <div class="challenge-progress">
+                        <div class="progress-mini"><div class="progress-fill" style="width: 60%;"></div></div>
+                        <span>18 of 30 days</span>
+                    </div>
+                    <button class="challenge-btn" onclick="startChallenge('latte')">Join Challenge</button>
+                </div>
+                
+                <div class="challenge-card animate-on-scroll" data-challenge="roundup">
+                    <div class="challenge-badge">💎 Smart</div>
+                    <h3>Round-Up Saver</h3>
+                    <div class="challenge-amount">Save $500+</div>
+                    <p>Round purchases to nearest dollar, save the difference. Automate it with apps!</p>
+                    <div class="challenge-progress">
+                        <div class="progress-mini"><div class="progress-fill" style="width: 40%;"></div></div>
+                        <span>$234 saved this month</span>
+                    </div>
+                    <button class="challenge-btn" onclick="startChallenge('roundup')">Activate Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+         MILESTONE REWARDS
+         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+    <section class="page-content">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag">ACHIEVEMENTS</span>
+                <h2 class="section-title">Unlock Your Milestones</h2>
+                <p class="section-subtitle">
+                    Every milestone earns you badges and bragging rights!
+                </p>
+            </div>
+            
+            <div class="milestones-grid">
+                <div class="milestone-card unlocked animate-on-scroll">
+                    <div class="milestone-icon">🌱</div>
+                    <h4>First $100</h4>
+                    <p>Started your savings journey</p>
+                    <div class="milestone-status">✅ Unlocked</div>
+                </div>
+                
+                <div class="milestone-card unlocked animate-on-scroll">
+                    <div class="milestone-icon">🔥</div>
+                    <h4>7-Day Streak</h4>
+                    <p>Tracked expenses for a week</p>
+                    <div class="milestone-status">✅ Unlocked</div>
+                </div>
+                
+                <div class="milestone-card unlocked animate-on-scroll">
+                    <div class="milestone-icon">💰</div>
+                    <h4>$500 Saved</h4>
+                    <p>Emergency fund started</p>
+                    <div class="milestone-status">✅ Unlocked</div>
+                </div>
+                
+                <div class="milestone-card in-progress animate-on-scroll">
+                    <div class="milestone-icon">🎯</div>
+                    <h4>$1,000 Milestone</h4>
+                    <p>80% complete - $200 to go!</p>
+                    <div class="milestone-progress-bar">
+                        <div class="milestone-fill" style="width: 80%;"></div>
+                    </div>
+                </div>
+                
+                <div class="milestone-card locked animate-on-scroll">
+                    <div class="milestone-icon">🏆</div>
+                    <h4>3-Month Fund</h4>
+                    <p>Build 3 months of expenses</p>
+                    <div class="milestone-status">🔒 Locked</div>
+                </div>
+                
+                <div class="milestone-card locked animate-on-scroll">
+                    <div class="milestone-icon">👑</div>
+                    <h4>Savings Master</h4>
+                    <p>6 months of expenses saved</p>
+                    <div class="milestone-status">🔒 Locked</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+         GOAL-BASED SAVING SYSTEM
+         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+    <section class="page-content">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag">SAVINGS GOALS</span>
+                <h2 class="section-title">Track Your Dreams</h2>
+                <p class="section-subtitle">
+                    Set specific goals and watch your progress. Every small step counts.
+                </p>
+            </div>
+            
+            <div class="goals-grid">
+                <div class="goal-card animate-on-scroll" data-goal="travel">
+                    <div class="goal-icon">✈️</div>
+                    <h3>Travel Fund</h3>
+                    <p class="goal-target">Target: $3,000</p>
+                    <div class="goal-progress">
+                        <div class="goal-progress-bar">
+                            <div class="goal-progress-fill" style="width: 45%;"></div>
+                        </div>
+                        <p class="goal-percentage">45% complete • $1,350 saved</p>
+                    </div>
+                </div>
+                
+                <div class="goal-card animate-on-scroll" data-goal="education">
+                    <div class="goal-icon">🎓</div>
+                    <h3>Education Fund</h3>
+                    <p class="goal-target">Target: $5,000</p>
+                    <div class="goal-progress">
+                        <div class="goal-progress-bar">
+                            <div class="goal-progress-fill" style="width: 30%;"></div>
+                        </div>
+                        <p class="goal-percentage">30% complete • $1,500 saved</p>
+                    </div>
+                </div>
+                
+                <div class="goal-card animate-on-scroll" data-goal="emergency">
+                    <div class="goal-icon">🛡️</div>
+                    <h3>Emergency Reserve</h3>
+                    <p class="goal-target">Target: $5,000</p>
+                    <div class="goal-progress">
+                        <div class="goal-progress-bar">
+                            <div class="goal-progress-fill" style="width: 50%;"></div>
+                        </div>
+                        <p class="goal-percentage">50% complete • $2,500 saved</p>
+                    </div>
+                </div>
+                
+                <div class="goal-card animate-on-scroll" data-goal="lifestyle">
+                    <div class="goal-icon">🎨</div>
+                    <h3>Lifestyle Upgrade</h3>
+                    <p class="goal-target">Target: $2,000</p>
+                    <div class="goal-progress">
+                        <div class="goal-progress-bar">
+                            <div class="goal-progress-fill" style="width: 60%;"></div>
+                        </div>
+                        <p class="goal-percentage">60% complete • $1,200 saved</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+         GOAL-BASED SAVING SYSTEM
+         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+    <section class="page-content">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag">SAVINGS GOALS</span>
+                <h2 class="section-title">Track Your Dreams</h2>
+                <p class="section-subtitle">
+                    Set specific goals and watch your progress. Every small step counts.
+                </p>
+            </div>
+            
+            <div class="goals-grid">
+                <div class="goal-card animate-on-scroll" data-goal="travel">
+                    <div class="goal-icon">✈️</div>
+                    <h3>Travel Fund</h3>
+                    <p class="goal-target">Target: $3,000</p>
+                    <div class="goal-progress">
+                        <div class="goal-progress-bar">
+                            <div class="goal-progress-fill" style="width: 45%;"></div>
+                        </div>
+                        <p class="goal-percentage">45% complete • $1,350 saved</p>
+                    </div>
+                </div>
+                
+                <div class="goal-card animate-on-scroll" data-goal="education">
+                    <div class="goal-icon">🎓</div>
+                    <h3>Education Fund</h3>
+                    <p class="goal-target">Target: $5,000</p>
+                    <div class="goal-progress">
+                        <div class="goal-progress-bar">
+                            <div class="goal-progress-fill" style="width: 30%;"></div>
+                        </div>
+                        <p class="goal-percentage">30% complete • $1,500 saved</p>
+                    </div>
+                </div>
+                
+                <div class="goal-card animate-on-scroll" data-goal="emergency">
+                    <div class="goal-icon">🛡️</div>
+                    <h3>Emergency Reserve</h3>
+                    <p class="goal-target">Target: $5,000</p>
+                    <div class="goal-progress">
+                        <div class="goal-progress-bar">
+                            <div class="goal-progress-fill" style="width: 50%;"></div>
+                        </div>
+                        <p class="goal-percentage">50% complete • $2,500 saved</p>
+                    </div>
+                </div>
+                
+                <div class="goal-card animate-on-scroll" data-goal="lifestyle">
+                    <div class="goal-icon">🎨</div>
+                    <h3>Lifestyle Upgrade</h3>
+                    <p class="goal-target">Target: $2,000</p>
+                    <div class="goal-progress">
+                        <div class="goal-progress-bar">
+                            <div class="goal-progress-fill" style="width: 60%;"></div>
+                        </div>
+                        <p class="goal-percentage">60% complete • $1,200 saved</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+         DYNAMIC SAVINGS TIPS CAROUSEL
+         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+    <section class="page-content" style="background: rgba(79, 209, 197, 0.03);">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag">PRO TIPS</span>
+                <h2 class="section-title">Money Hacks That Work</h2>
+                <p class="section-subtitle">
+                    Real tactics from successful savers. Swipe for more!
+                </p>
+            </div>
+            
+            <div class="tips-carousel animate-on-scroll">
+                <button class="carousel-btn prev" onclick="scrollCarousel(-1)">‹</button>
+                <div class="carousel-container" id="tipsCarousel">
+                    <div class="tip-card">
+                        <div class="tip-number">01</div>
+                        <h3>🏦 Automate Everything</h3>
+                        <p>Set up automatic transfers on payday. If it's automatic, it's inevitable. Remove the decision fatigue.</p>
+                        <div class="tip-impact">Impact: Save 20% more consistently</div>
+                    </div>
+                    
+                    <div class="tip-card">
+                        <div class="tip-number">02</div>
+                        <h3>📱 Delete Shopping Apps</h3>
+                        <p>Amazon, food delivery, retail apps = impulse spending. Remove them. Make buying harder, saving easier.</p>
+                        <div class="tip-impact">Impact: Reduce impulse buys by 40%</div>
+                    </div>
+                    
+                    <div class="tip-card">
+                        <div class="tip-number">03</div>
+                        <h3>💳 Use Cash Envelopes</h3>
+                        <p>Pull out cash for discretionary spending. Seeing money leave your hand creates real awareness.</p>
+                        <div class="tip-impact">Impact: Cut spending by 15-20%</div>
+                    </div>
+                    
+                    <div class="tip-card">
+                        <div class="tip-number">04</div>
+                        <h3>🍽️ Meal Prep Sundays</h3>
+                        <p>Cook for the week in one session. Saves money, time, and health. Restaurant bills plummet.</p>
+                        <div class="tip-impact">Impact: Save $200-400/month</div>
+                    </div>
+                    
+                    <div class="tip-card">
+                        <div class="tip-number">05</div>
+                        <h3>🎯 Visualize Your Goals</h3>
+                        <p>Print images of what you're saving for. Put them where you spend. Emotional connection = motivation.</p>
+                        <div class="tip-impact">Impact: 3x goal achievement rate</div>
+                    </div>
+                    
+                    <div class="tip-card">
+                        <div class="tip-number">06</div>
+                        <h3>🔍 Audit Subscriptions</h3>
+                        <p>Review every subscription monthly. Cancel what you don't use. Avg person wastes $250/month here.</p>
+                        <div class="tip-impact">Impact: Save $100-300/month</div>
+                    </div>
+                </div>
+                <button class="carousel-btn next" onclick="scrollCarousel(1)">›</button>
+            </div>
+            
+            <div class="carousel-dots" id="carouselDots"></div>
+        </div>
+    </section>
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+         DAILY MICRO-HABITS CHECKLIST
+         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+    <section class="page-content">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag">DAILY HABITS</span>
+                <h2 class="section-title">Build Your Streak</h2>
+                <p class="section-subtitle">
+                    Small daily actions lead to big results. Check off your habits and build momentum.
+                </p>
+            </div>
+            
+            <div class="habits-checklist animate-on-scroll">
+                <div class="habit-item" onclick="toggleHabit(this)">
+                    <div class="habit-checkbox"></div>
+                    <span class="habit-text">Track all expenses today</span>
+                    <span class="habit-streak">🔥 5 days</span>
+                </div>
+                
+                <div class="habit-item" onclick="toggleHabit(this)">
+                    <div class="habit-checkbox"></div>
+                    <span class="habit-text">Review budget for the week</span>
+                    <span class="habit-streak">🔥 3 days</span>
+                </div>
+                
+                <div class="habit-item" onclick="toggleHabit(this)">
+                    <div class="habit-checkbox"></div>
+                    <span class="habit-text">Skip one impulse purchase</span>
+                    <span class="habit-streak">🔥 7 days</span>
+                </div>
+                
+                <div class="habit-item" onclick="toggleHabit(this)">
+                    <div class="habit-checkbox"></div>
+                    <span class="habit-text">Save spare change digitally</span>
+                    <span class="habit-streak">🔥 12 days</span>
+                </div>
+                
+                <div class="habit-item" onclick="toggleHabit(this)">
+                    <div class="habit-checkbox"></div>
+                    <span class="habit-text">Read one finance tip</span>
+                    <span class="habit-streak">🔥 9 days</span>
+                </div>
+                
+                <div class="habit-item" onclick="toggleHabit(this)">
+                    <div class="habit-checkbox"></div>
+                    <span class="habit-text">Plan tomorrow's spending</span>
+                    <span class="habit-streak">🔥 4 days</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+         FOOTER
+         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">GetRich</div>
+            <p class="footer-tagline">Building financial confidence, one youth at a time</p>
+            <p class="footer-team">Created by Team GetRich</p>
+            
+            <div class="footer-socials">
+                <a href="#" class="social-icon" title="Instagram">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </a>
+                <a href="#" class="social-icon" title="Twitter">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                    </svg>
+                </a>
+                <a href="#" class="social-icon" title="LinkedIn">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                </a>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 GetRich – Finance101. Empowering the next generation of financially savvy youths.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="JS/saving-agent.js"></script>
+</body>
+</html>
