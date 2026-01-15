@@ -6,6 +6,27 @@
 // 1. SCROLL ANIMATIONS
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
+const API_URL = "https://YOUR_SPACE.hf.space/api/v1/prediction/YOUR_CHATFLOW_ID";
+
+async function sendMessage() {
+  const input = document.getElementById("userInput").value;
+
+  const response = await fetch(API_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      question: input
+    })
+  });
+
+  const result = await response.json();
+
+  document.getElementById("response").innerText =
+    result.text || "No response from AI";
+}
+
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -275,3 +296,4 @@ const backButton = document.querySelector('.back-button');
 backButton?.addEventListener('click', (e) => {
     // Smooth transition handled by browser default
 });
+
