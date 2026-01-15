@@ -74,6 +74,14 @@
                         </div>
                     </div>
                     
+                    <script type="module">
+                        import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
+                        Chatbot.init({
+                        chatflowid: "c16cb4ce-823b-48e3-b323-58d646584d6e",
+                        apiHost: "https://flowise-production-2afa.up.railway.app",
+                        })
+                    </script>
+
                     <div class="chat-input-area">
                         <input type="text" class="chat-input" placeholder="Ask about investing, stocks, ETFs..." id="investChatInput">
                         <button class="chat-send-btn" id="investSendBtn">Send</button>
@@ -707,3 +715,4 @@
     <script src="JS/investing-agent.js"></script>
 </body>
 </html>
+
