@@ -1,7 +1,71 @@
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // INVESTING AI AGENT - Interactive Features
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+const style = document.createElement("style");
+  style.innerHTML = `
+    /* Floating button */
+    .flowise-chatbot-button {
+      background: linear-gradient(135deg, #2dd4bf, #0f172a) !important;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.45) !important;
+      border-radius: 50% !important;
+    }
 
+    /* Chat container */
+    .flowise-chatbot-container {
+      background: linear-gradient(160deg, #020617, #0f172a, #1e293b) !important;
+      border-radius: 18px !important;
+      overflow: hidden !important;
+      font-family: Inter, system-ui, sans-serif !important;
+    }
+
+    /* Header */
+    .flowise-chatbot-header {
+      background: linear-gradient(135deg, #0f172a, #020617) !important;
+      color: #e2e8f0 !important;
+      font-weight: 600 !important;
+      letter-spacing: 0.3px;
+    }
+
+    /* Bot message */
+    .flowise-chatbot-message.bot {
+      background: rgba(15, 23, 42, 0.9) !important;
+      color: #e5e7eb !important;
+      border-radius: 14px !important;
+    }
+
+    /* User message */
+    .flowise-chatbot-message.user {
+      background: linear-gradient(135deg, #2dd4bf, #14b8a6) !important;
+      color: #020617 !important;
+      border-radius: 14px !important;
+      font-weight: 500;
+    }
+
+    /* Input area */
+    .flowise-chatbot-input {
+      background: #020617 !important;
+      border-top: 1px solid rgba(148,163,184,0.15) !important;
+    }
+
+    .flowise-chatbot-input textarea {
+      background: #020617 !important;
+      color: #e5e7eb !important;
+      border-radius: 12px !important;
+      border: 1px solid rgba(148,163,184,0.25) !important;
+    }
+
+    /* Send button */
+    .flowise-chatbot-send {
+      background: linear-gradient(135deg, #2dd4bf, #14b8a6) !important;
+      color: #020617 !important;
+      border-radius: 12px !important;
+    }
+
+    /* Remove Flowise branding */
+    .flowise-chatbot-footer {
+      display: none !important;
+    }
+  `;
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // 1. SCROLL ANIMATIONS
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -274,6 +338,7 @@ const backButton = document.querySelector('.back-button');
 backButton?.addEventListener('click', (e) => {
     // Smooth transition handled by browser default
 });
+
 
 
 
