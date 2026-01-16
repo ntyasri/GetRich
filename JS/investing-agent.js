@@ -1,101 +1,24 @@
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // INVESTING AI AGENT - Interactive Features
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-const style = document.createElement("style");
+// Add chatbot styles to the page
+document.addEventListener('DOMContentLoaded', function() {
+  const style = document.createElement("style");
   style.innerHTML = `
-    /* Floating button - GetRich themed */
     .flowise-chatbot-button {
       background: linear-gradient(135deg, #2dd4bf, #06b6d4) !important;
       box-shadow: 0 12px 30px rgba(45, 212, 191, 0.25), 0 0 20px rgba(45, 212, 191, 0.15) !important;
       border-radius: 50% !important;
       border: 2px solid rgba(255, 255, 255, 0.1) !important;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
     }
 
     .flowise-chatbot-button:hover {
       box-shadow: 0 15px 40px rgba(45, 212, 191, 0.35), 0 0 30px rgba(124, 124, 255, 0.2) !important;
       transform: scale(1.08) !important;
     }
-
-    /* Custom icon styling */
-    .flowise-chatbot-button svg {
-      filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.3)) !important;
-    }
-
-    /* Hide default SVG and add custom content */
-    .flowise-chatbot-button::before {
-      content: "💰" !important;
-      font-size: 20px !important;
-    }
-
-    .flowise-chatbot-button svg {
-      display: none !important;
-    }
-
-    /* Chat container */
-    .flowise-chatbot-container {
-      background: linear-gradient(160deg, #020617, #0f172a, #1e293b) !important;
-      border-radius: 18px !important;
-      overflow: hidden !important;
-      font-family: Inter, system-ui, sans-serif !important;
-      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5) !important;
-      border: 1px solid rgba(45, 212, 191, 0.1) !important;
-    }
-
-    /* Header */
-    .flowise-chatbot-header {
-      background: linear-gradient(135deg, #0f172a, #020617) !important;
-      color: #e2e8f0 !important;
-      font-weight: 600 !important;
-      letter-spacing: 0.3px;
-      border-bottom: 1px solid rgba(45, 212, 191, 0.1) !important;
-    }
-
-    /* Bot message */
-    .flowise-chatbot-message.bot {
-      background: rgba(15, 23, 42, 0.9) !important;
-      color: #e5e7eb !important;
-      border-radius: 14px !important;
-    }
-
-    /* User message */
-    .flowise-chatbot-message.user {
-      background: linear-gradient(135deg, #2dd4bf, #14b8a6) !important;
-      color: #020617 !important;
-      border-radius: 14px !important;
-      font-weight: 500;
-    }
-
-    /* Input area */
-    .flowise-chatbot-input {
-      background: #020617 !important;
-      border-top: 1px solid rgba(148,163,184,0.15) !important;
-    }
-
-    .flowise-chatbot-input textarea {
-      background: #020617 !important;
-      color: #e5e7eb !important;
-      border-radius: 12px !important;
-      border: 1px solid rgba(148,163,184,0.25) !important;
-    }
-
-    /* Send button */
-    .flowise-chatbot-send {
-      background: linear-gradient(135deg, #2dd4bf, #14b8a6) !important;
-      color: #020617 !important;
-      border-radius: 12px !important;
-      transition: all 0.3s ease !important;
-    }
-
-    .flowise-chatbot-send:hover {
-      box-shadow: 0 0 15px rgba(45, 212, 191, 0.4) !important;
-    }
-
-    /* Remove Flowise branding */
-    .flowise-chatbot-footer {
-      display: none !important;
-    }
   `;
+  document.head.appendChild(style);
+});
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // 1. SCROLL ANIMATIONS
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -368,6 +291,7 @@ const backButton = document.querySelector('.back-button');
 backButton?.addEventListener('click', (e) => {
     // Smooth transition handled by browser default
 });
+
 
 
 
