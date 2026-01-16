@@ -55,93 +55,94 @@
     apiHost: "https://flowise-production-4b1a.up.railway.app",
 
     theme: {
-      /* ===== Floating Button ===== */
-      button: {
-        backgroundColor: "#14b8a6",   // teal
-        right: 24,
-        bottom: 24,
-        size: 56,
-        dragAndDrop: true,
-        iconColor: "white",
+      customCSS: `
+        /* ===== GetRich Chatbot Styling ===== */
 
-        // 🔥 GetRich logo
-        customIconSrc: "https://YOUR_GETRICH_LOGO_URL.png",
-
-        boxShadow: "0 0 20px rgba(45,212,191,0.9)",
-
-        autoWindowOpen: {
-          autoOpen: false,
-          openDelay: 2,
-          autoOpenOnMobile: false
+        .flowise-chatbot-button {
+          background: linear-gradient(135deg, #2dd4bf, #06b6d4) !important;
+          box-shadow: 0 12px 30px rgba(45, 212, 191, 0.25),
+                      0 0 20px rgba(45, 212, 191, 0.15) !important;
+          border-radius: 50% !important;
+          border: 2px solid rgba(255, 255, 255, 0.1) !important;
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
         }
-      },
 
-      /* ===== Tooltip ===== */
-      tooltip: {
-        showTooltip: true,
-        tooltipMessage: "Ask GetRich 💰",
-        tooltipBackgroundColor: "#020617",
-        tooltipTextColor: "#e5e7eb",
-        tooltipFontSize: 15
-      },
-
-      /* ===== Chat Window ===== */
-      chatWindow: {
-        showTitle: true,
-        title: "GetRich AI",
-        titleAvatarSrc: "https://YOUR_GETRICH_LOGO_URL.png",
-
-        welcomeMessage: "Hi 👋 I’m GetRich AI. Ask me about investing concepts.",
-        errorMessage: "Something went wrong. Please try again.",
-
-        backgroundColor: "#020617",
-        height: "100%",
-        width: "100%",
-        fontSize: 15,
-
-        starterPrompts: [
-          "What is investing?",
-          "How does risk work?",
-          "What is diversification?"
-        ],
-
-        /* ===== Bot Message ===== */
-        botMessage: {
-          backgroundColor: "#0f172a",
-          textColor: "#e5e7eb",
-          showAvatar: true,
-          avatarSrc: "https://YOUR_GETRICH_LOGO_URL.png"
-        },
-
-        /* ===== User Message ===== */
-        userMessage: {
-          backgroundColor: "#14b8a6",
-          textColor: "#020617",
-          showAvatar: true,
-          avatarSrc: "https://raw.githubusercontent.com/zahidkhawaja/langchain-chat-nextjs/main/public/usericon.png"
-        },
-
-        /* ===== Text Input ===== */
-        textInput: {
-          placeholder: "Ask GetRich something...",
-          backgroundColor: "#020617",
-          textColor: "#e5e7eb",
-          sendButtonColor: "#14b8a6",
-          autoFocus: true
-        },
-
-        /* ===== Footer ===== */
-        footer: {
-          textColor: "#94a3b8",
-          text: "Powered by",
-          company: "GetRich",
-          companyLink: "#"
+        .flowise-chatbot-button:hover {
+          box-shadow: 0 15px 40px rgba(45, 212, 191, 0.35),
+                      0 0 30px rgba(124, 124, 255, 0.2) !important;
+          transform: scale(1.08) !important;
         }
-      }
+
+        .flowise-chatbot-button svg {
+          display: none !important;
+        }
+
+        .flowise-chatbot-button::before {
+          content: "💰" !important;
+          font-size: 24px !important;
+          font-weight: bold !important;
+        }
+
+        .flowise-chatbot-container {
+          background: linear-gradient(160deg, #020617, #0f172a, #1e293b) !important;
+          border-radius: 18px !important;
+          overflow: hidden !important;
+          font-family: Inter, system-ui, sans-serif !important;
+          box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5) !important;
+          border: 1px solid rgba(45, 212, 191, 0.1) !important;
+        }
+
+        .flowise-chatbot-header {
+          background: linear-gradient(135deg, #0f172a, #020617) !important;
+          color: #e2e8f0 !important;
+          font-weight: 600 !important;
+          letter-spacing: 0.3px;
+          border-bottom: 1px solid rgba(45, 212, 191, 0.1) !important;
+        }
+
+        .flowise-chatbot-message.bot {
+          background: rgba(15, 23, 42, 0.9) !important;
+          color: #e5e7eb !important;
+          border-radius: 14px !important;
+        }
+
+        .flowise-chatbot-message.user {
+          background: linear-gradient(135deg, #2dd4bf, #14b8a6) !important;
+          color: #020617 !important;
+          border-radius: 14px !important;
+          font-weight: 500;
+        }
+
+        .flowise-chatbot-input {
+          background: #020617 !important;
+          border-top: 1px solid rgba(148,163,184,0.15) !important;
+        }
+
+        .flowise-chatbot-input textarea {
+          background: #020617 !important;
+          color: #e5e7eb !important;
+          border-radius: 12px !important;
+          border: 1px solid rgba(148,163,184,0.25) !important;
+        }
+
+        .flowise-chatbot-send {
+          background: linear-gradient(135deg, #2dd4bf, #14b8a6) !important;
+          color: #020617 !important;
+          border-radius: 12px !important;
+          transition: all 0.3s ease !important;
+        }
+
+        .flowise-chatbot-send:hover {
+          box-shadow: 0 0 15px rgba(45, 212, 191, 0.4) !important;
+        }
+
+        .flowise-chatbot-footer {
+          display: none !important;
+        }
+      `
     }
   })
 </script>
-
 
     <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
          INVESTING BASICS
@@ -767,4 +768,5 @@
     <script src="JS/investing-agent.js"></script>
 </body>
 </html>
+
 
