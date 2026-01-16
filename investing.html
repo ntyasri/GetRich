@@ -8,6 +8,90 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* GetRich Chatbot Styling */
+        .flowise-chatbot-button {
+            background: linear-gradient(135deg, #2dd4bf, #06b6d4) !important;
+            box-shadow: 0 12px 30px rgba(45, 212, 191, 0.25), 0 0 20px rgba(45, 212, 191, 0.15) !important;
+            border-radius: 50% !important;
+            border: 2px solid rgba(255, 255, 255, 0.1) !important;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        }
+
+        .flowise-chatbot-button:hover {
+            box-shadow: 0 15px 40px rgba(45, 212, 191, 0.35), 0 0 30px rgba(124, 124, 255, 0.2) !important;
+            transform: scale(1.08) !important;
+        }
+
+        /* Hide default icon and show money bag */
+        .flowise-chatbot-button svg {
+            display: none !important;
+        }
+
+        .flowise-chatbot-button::before {
+            content: "💰" !important;
+            font-size: 24px !important;
+            font-weight: bold !important;
+        }
+
+        /* Chat container */
+        .flowise-chatbot-container {
+            background: linear-gradient(160deg, #020617, #0f172a, #1e293b) !important;
+            border-radius: 18px !important;
+            overflow: hidden !important;
+            font-family: Inter, system-ui, sans-serif !important;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5) !important;
+            border: 1px solid rgba(45, 212, 191, 0.1) !important;
+        }
+
+        .flowise-chatbot-header {
+            background: linear-gradient(135deg, #0f172a, #020617) !important;
+            color: #e2e8f0 !important;
+            font-weight: 600 !important;
+            letter-spacing: 0.3px;
+            border-bottom: 1px solid rgba(45, 212, 191, 0.1) !important;
+        }
+
+        .flowise-chatbot-message.bot {
+            background: rgba(15, 23, 42, 0.9) !important;
+            color: #e5e7eb !important;
+            border-radius: 14px !important;
+        }
+
+        .flowise-chatbot-message.user {
+            background: linear-gradient(135deg, #2dd4bf, #14b8a6) !important;
+            color: #020617 !important;
+            border-radius: 14px !important;
+            font-weight: 500;
+        }
+
+        .flowise-chatbot-input {
+            background: #020617 !important;
+            border-top: 1px solid rgba(148,163,184,0.15) !important;
+        }
+
+        .flowise-chatbot-input textarea {
+            background: #020617 !important;
+            color: #e5e7eb !important;
+            border-radius: 12px !important;
+            border: 1px solid rgba(148,163,184,0.25) !important;
+        }
+
+        .flowise-chatbot-send {
+            background: linear-gradient(135deg, #2dd4bf, #14b8a6) !important;
+            color: #020617 !important;
+            border-radius: 12px !important;
+            transition: all 0.3s ease !important;
+        }
+
+        .flowise-chatbot-send:hover {
+            box-shadow: 0 0 15px rgba(45, 212, 191, 0.4) !important;
+        }
+
+        .flowise-chatbot-footer {
+            display: none !important;
+        }
+    </style>
 </head>
 <script type="module">
     import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
@@ -673,6 +757,8 @@
     <script src="JS/investing-agent.js"></script>
 </body>
 </html>
+
+
 
 
 
