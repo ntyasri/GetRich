@@ -1,681 +1,343 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grow Your Future – Investing | GetRich</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-</head>
-<script type="module">
-    import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
-    Chatbot.init({
-        chatflowid: "64d96f61-a052-42e7-bbce-c3f03cab5e8d",
-        apiHost: "https://flowise-production-4b1a.up.railway.app",
-    })
-</script>
-<body>
-    <!-- Logo in Top Right -->
-    <a href="index.html" class="logo-link logo-right">
-        <img src="images/getrich-logo.png" alt="GetRich Logo" class="logo">
-    </a>
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// INVESTING AI AGENT - Interactive Features
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+const style = document.createElement("style");
+  style.innerHTML = `
+    /* Floating button */
+    .flowise-chatbot-button {
+      background: linear-gradient(135deg, #2dd4bf, #0f172a) !important;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.45) !important;
+      border-radius: 50% !important;
+    }
 
-    <!-- Floating Gradient Orbs -->
-    <div class="gradient-shape shape-1"></div>
-    <div class="gradient-shape shape-2"></div>
-    <div class="gradient-shape shape-3"></div>
+    /* Chat container */
+    .flowise-chatbot-container {
+      background: linear-gradient(160deg, #020617, #0f172a, #1e293b) !important;
+      border-radius: 18px !important;
+      overflow: hidden !important;
+      font-family: Inter, system-ui, sans-serif !important;
+    }
 
-    <!-- Back Navigation -->
-    <nav class="back-nav">
-        <div class="container">
-            <a href="index.html" class="back-button">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                    <path d="M12.5 5L7.5 10L12.5 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <span>Back to Home</span>
-            </a>
-        </div>
-    </nav>
+    /* Header */
+    .flowise-chatbot-header {
+      background: linear-gradient(135deg, #0f172a, #020617) !important;
+      color: #e2e8f0 !important;
+      font-weight: 600 !important;
+      letter-spacing: 0.3px;
+    }
 
-    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-         HERO SECTION
-         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
-    <section class="page-hero">
-        <div class="page-hero-content animate-on-scroll">
-            <h1>Grow Your Future</h1>
-            <p>Let your money work while you live. Start small, think big, invest smart.</p>
-        </div>
-    </section>
+    /* Bot message */
+    .flowise-chatbot-message.bot {
+      background: rgba(15, 23, 42, 0.9) !important;
+      color: #e5e7eb !important;
+      border-radius: 14px !important;
+    }
 
-    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-         INVESTING BASICS
-         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
-    <section class="page-content">
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <span class="section-tag">FUNDAMENTALS</span>
-                <h2 class="section-title">Investing 101</h2>
-                <p class="section-subtitle">
-                    Master the basics before you invest a single dollar.
-                </p>
-            </div>
-            
-            <div class="investing-basics-grid">
-                <div class="concept-card animate-on-scroll">
-                    <div class="concept-number">1</div>
-                    <h3>What is Investing?</h3>
-                    <p>
-                        Investing is putting money into assets (stocks, bonds, ETFs) that have potential to grow over time. 
-                        You earn returns through appreciation and dividends.
-                    </p>
-                    <div class="concept-benefit">💡 Your money works while you sleep</div>
-                </div>
-                
-                <div class="concept-card animate-on-scroll">
-                    <div class="concept-number">2</div>
-                    <h3>Why Start Early?</h3>
-                    <p>
-                        Time is your superpower. Investing $100/month from age 20 yields $432K by 60. 
-                        Wait until 30? Only $208K. That's the power of compounding!
-                    </p>
-                    <div class="concept-benefit">⏰ Time multiplies your money</div>
-                </div>
-                
-                <div class="concept-card animate-on-scroll">
-                    <div class="concept-number">3</div>
-                    <h3>Power of Compounding</h3>
-                    <p>
-                        "Compound interest is the eighth wonder of the world." Earnings on your earnings create exponential growth. 
-                        Einstein called it the most powerful force in finance.
-                    </p>
-                    <div class="concept-benefit">🚀 Exponential growth over time</div>
-                </div>
-                
-                <div class="concept-card animate-on-scroll">
-                    <div class="concept-number">4</div>
-                    <h3>Risk vs. Reward</h3>
-                    <p>
-                        Higher potential returns = higher risk. Stocks are riskier but grow more. Bonds are safer but grow slower. 
-                        Balance based on your timeline and comfort.
-                    </p>
-                    <div class="concept-benefit">⚖️ Balance risk with your goals</div>
-                </div>
-            </div>
-        </div>
-    </section>
+    /* User message */
+    .flowise-chatbot-message.user {
+      background: linear-gradient(135deg, #2dd4bf, #14b8a6) !important;
+      color: #020617 !important;
+      border-radius: 14px !important;
+      font-weight: 500;
+    }
 
-    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-         RISK EXPLORER
-         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
-    <section class="page-content">
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <span class="section-tag">PERSONALIZED</span>
-                <h2 class="section-title">Find Your Risk Profile</h2>
-                <p class="section-subtitle">
-                    Choose your investment style. Adjust the slider to see portfolio changes.
-                </p>
-            </div>
-            
-            <div class="risk-explorer animate-on-scroll">
-                    <div class="risk-slider-container">
-                    <div class="risk-label conservative">Conservative</div>
-                    <input type="range" class="risk-slider" id="riskSlider" min="0" max="100" value="50" step="1">
-                    <div class="risk-label aggressive">Aggressive</div>
-                </div>
-                
-                <div class="risk-profile-cards">
-                    <div class="profile-card conservative-profile" id="conservativeProfile">
-                        <h3>🛡️ Conservative</h3>
-                        <p>Lower risk, stable growth</p>
-                        <div class="portfolio-breakdown">
-                            <div class="portfolio-item">
-                                <span>Bonds & Fixed Income</span>
-                                <div class="portfolio-bar"><div class="bar-fill" style="width: 60%;"></div></div>
-                                <span class="percentage">60%</span>
-                            </div>
-                            <div class="portfolio-item">
-                                <span>Stocks</span>
-                                <div class="portfolio-bar"><div class="bar-fill" style="width: 35%;"></div></div>
-                                <span class="percentage">35%</span>
-                            </div>
-                            <div class="portfolio-item">
-                                <span>Cash</span>
-                                <div class="portfolio-bar"><div class="bar-fill" style="width: 5%;"></div></div>
-                                <span class="percentage">5%</span>
-                            </div>
-                        </div>
-                        <div class="profile-tip">Best for: Retirees, risk-averse investors</div>
-                    </div>
-                    
-                    <div class="profile-card balanced-profile" id="balancedProfile" style="display: none;">
-                        <h3>⚖️ Balanced</h3>
-                        <p>Moderate risk & reward</p>
-                        <div class="portfolio-breakdown">
-                            <div class="portfolio-item">
-                                <span>Stocks</span>
-                                <div class="portfolio-bar"><div class="bar-fill" style="width: 50%;"></div></div>
-                                <span class="percentage">50%</span>
-                            </div>
-                            <div class="portfolio-item">
-                                <span>Bonds</span>
-                                <div class="portfolio-bar"><div class="bar-fill" style="width: 40%;"></div></div>
-                                <span class="percentage">40%</span>
-                            </div>
-                            <div class="portfolio-item">
-                                <span>Alternatives</span>
-                                <div class="portfolio-bar"><div class="bar-fill" style="width: 10%;"></div></div>
-                                <span class="percentage">10%</span>
-                            </div>
-                        </div>
-                        <div class="profile-tip">Best for: Most young adults (20s-40s)</div>
-                    </div>
-                    
-                    <div class="profile-card aggressive-profile" id="aggressiveProfile" style="display: none;">
-                        <h3>🚀 Aggressive</h3>
-                        <p>Higher risk, higher growth potential</p>
-                        <div class="portfolio-breakdown">
-                            <div class="portfolio-item">
-                                <span>Stocks & Growth</span>
-                                <div class="portfolio-bar"><div class="bar-fill" style="width: 80%;"></div></div>
-                                <span class="percentage">80%</span>
-                            </div>
-                            <div class="portfolio-item">
-                                <span>Emerging Markets</span>
-                                <div class="portfolio-bar"><div class="bar-fill" style="width: 15%;"></div></div>
-                                <span class="percentage">15%</span>
-                            </div>
-                            <div class="portfolio-item">
-                                <span>Small Cap</span>
-                                <div class="portfolio-bar"><div class="bar-fill" style="width: 5%;"></div></div>
-                                <span class="percentage">5%</span>
-                            </div>
-                        </div>
-                        <div class="profile-tip">Best for: Long-term investors, high risk tolerance</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    /* Input area */
+    .flowise-chatbot-input {
+      background: #020617 !important;
+      border-top: 1px solid rgba(148,163,184,0.15) !important;
+    }
 
-    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-         INVESTMENT VEHICLES
-         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
-    <section class="page-content">
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <span class="section-tag">OPTIONS</span>
-                <h2 class="section-title">Investment Vehicles</h2>
-                <p class="section-subtitle">
-                    Different ways to invest your money. Choose what matches your goals.
-                </p>
-            </div>
-            
-            <div class="investment-vehicles-grid">
-                <div class="vehicle-card animate-on-scroll">
-                    <div class="vehicle-icon">📈</div>
-                    <h3>Stocks</h3>
-                    <p>Own pieces of companies. High growth potential but more volatile.</p>
-                    <div class="vehicle-pros">
-                        <div class="pro">✓ High growth potential</div>
-                        <div class="pro">✓ Dividend income</div>
-                        <div class="pro">✓ Liquid (easy to sell)</div>
-                    </div>
-                    <div class="vehicle-cons">
-                        <div class="con">✗ More volatile</div>
-                        <div class="con">✗ Requires research</div>
-                    </div>
-                </div>
-                
-                <div class="vehicle-card animate-on-scroll">
-                    <div class="vehicle-icon">📦</div>
-                    <h3>ETFs</h3>
-                    <p>Basket of stocks/bonds. Diversified and beginner-friendly.</p>
-                    <div class="vehicle-pros">
-                        <div class="pro">✓ Instant diversification</div>
-                        <div class="pro">✓ Low fees</div>
-                        <div class="pro">✓ Easy to start</div>
-                    </div>
-                    <div class="vehicle-cons">
-                        <div class="con">✗ Less customizable</div>
-                        <div class="con">✗ Tracking error</div>
-                    </div>
-                </div>
-                
-                <div class="vehicle-card animate-on-scroll">
-                    <div class="vehicle-icon">🏦</div>
-                    <h3>Bonds</h3>
-                    <p>Loans to companies/governments. Stable but lower returns.</p>
-                    <div class="vehicle-pros">
-                        <div class="pro">✓ Predictable income</div>
-                        <div class="pro">✓ Lower risk</div>
-                        <div class="pro">✓ Portfolio balance</div>
-                    </div>
-                    <div class="vehicle-cons">
-                        <div class="con">✗ Lower returns</div>
-                        <div class="con">✗ Interest rate risk</div>
-                    </div>
-                </div>
-                
-                <div class="vehicle-card animate-on-scroll">
-                    <div class="vehicle-icon">🪙</div>
-                    <h3>Cryptocurrency</h3>
-                    <p>Digital assets. Highly speculative—use only what you can lose.</p>
-                    <div class="vehicle-pros">
-                        <div class="pro">✓ High upside potential</div>
-                        <div class="pro">✓ 24/7 trading</div>
-                        <div class="pro">✓ Innovation play</div>
-                    </div>
-                    <div class="vehicle-cons">
-                        <div class="con">✗ Very volatile</div>
-                        <div class="con">✗ Regulatory risk</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    .flowise-chatbot-input textarea {
+      background: #020617 !important;
+      color: #e5e7eb !important;
+      border-radius: 12px !important;
+      border: 1px solid rgba(148,163,184,0.25) !important;
+    }
 
-    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-         INVESTMENT CALCULATOR
-         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
-    <section class="page-content">
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <span class="section-tag">INTERACTIVE</span>
-                <h2 class="section-title">Investment Growth Calculator</h2>
-                <p class="section-subtitle">
-                    See how your investments grow over time with compound interest.
-                </p>
-            </div>
-            
-            <div class="investment-calculator animate-on-scroll">
-                <div class="calc-inputs">
-                    <div class="calc-input-group">
-                        <label>💰 Initial Investment</label>
-                        <div class="slider-wrapper">
-                            <input type="range" class="slider-control" id="initialInvestment" min="100" max="50000" value="5000" step="100">
-                            <span class="slider-value">$<span id="initialValue">5000</span></span>
-                        </div>
-                    </div>
-                    
-                    <div class="calc-input-group">
-                        <label>📅 Monthly Contribution</label>
-                        <div class="slider-wrapper">
-                            <input type="range" class="slider-control" id="monthlyContribution" min="0" max="1000" value="100" step="25">
-                            <span class="slider-value">$<span id="monthlyValue">100</span></span>
-                        </div>
-                    </div>
-                    
-                    <div class="calc-input-group">
-                        <label>📈 Annual Return Rate</label>
-                        <div class="slider-wrapper">
-                            <input type="range" class="slider-control" id="returnRate" min="2" max="15" value="7" step="0.5">
-                            <span class="slider-value"><span id="returnValue">7</span>%</span>
-                        </div>
-                    </div>
-                    
-                    <div class="calc-input-group">
-                        <label>⏱️ Investment Timeline</label>
-                        <div class="slider-wrapper">
-                            <input type="range" class="slider-control" id="timeframe" min="1" max="50" value="20" step="1">
-                            <span class="slider-value"><span id="timeframeValue">20</span> years</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="calc-results">
-                    <div class="result-box">
-                        <div class="result-label">Total Invested</div>
-                        <div class="result-amount" id="totalInvested">$29,000</div>
-                    </div>
-                    
-                    <div class="result-box primary">
-                        <div class="result-label">Future Value</div>
-                        <div class="result-amount large" id="futureValue">$77,453</div>
-                    </div>
-                    
-                    <div class="result-box">
-                        <div class="result-label">Investment Gains</div>
-                        <div class="result-amount gain" id="investmentGains">+$48,453</div>
-                    </div>
-                    
-                    <div class="insight-box">
-                        <strong>💡 Smart Insight:</strong>
-                        <p id="calcInsight">By investing $5,000 upfront and $100/month for 20 years at 7% returns, you'll earn $48,453 in pure gains—that's 167% profit!</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    /* Send button */
+    .flowise-chatbot-send {
+      background: linear-gradient(135deg, #2dd4bf, #14b8a6) !important;
+      color: #020617 !important;
+      border-radius: 12px !important;
+    }
 
-    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-         RETURN COMPARISON
-         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
-    <section class="page-content">
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <span class="section-tag">COMPARISON</span>
-                <h2 class="section-title">Investment Vehicle Returns</h2>
-                <p class="section-subtitle">
-                    Historical average returns ($10,000 invested for 20 years)
-                </p>
-            </div>
-            
-            <div class="returns-comparison animate-on-scroll">
-                <div class="comparison-item">
-                    <div class="comparison-vehicle">
-                        <div class="vehicle-emoji">🏦</div>
-                        <h4>Savings Account</h4>
-                        <p>0.5% APY</p>
-                    </div>
-                    <div class="comparison-growth">
-                        <div class="growth-bar">
-                            <div class="growth-fill" style="width: 10%; background: #9CA3AF;"></div>
-                        </div>
-                        <div class="growth-amount">$11,050</div>
-                    </div>
-                </div>
-                
-                <div class="comparison-item">
-                    <div class="comparison-vehicle">
-                        <div class="vehicle-emoji">🏛️</div>
-                        <h4>Bonds</h4>
-                        <p>4% APY</p>
-                    </div>
-                    <div class="comparison-growth">
-                        <div class="growth-bar">
-                            <div class="growth-fill" style="width: 35%; background: #F59E0B;"></div>
-                        </div>
-                        <div class="growth-amount">$21,911</div>
-                    </div>
-                </div>
-                
-                <div class="comparison-item">
-                    <div class="comparison-vehicle">
-                        <div class="vehicle-emoji">📦</div>
-                        <h4>ETFs (Balanced)</h4>
-                        <p>7% APY</p>
-                    </div>
-                    <div class="comparison-growth">
-                        <div class="growth-bar">
-                            <div class="growth-fill" style="width: 65%; background: #4FD1C5;"></div>
-                        </div>
-                        <div class="growth-amount">$38,696</div>
-                    </div>
-                </div>
-                
-                <div class="comparison-item">
-                    <div class="comparison-vehicle">
-                        <div class="vehicle-emoji">📈</div>
-                        <h4>Stocks (S&P 500)</h4>
-                        <p>10% APY</p>
-                    </div>
-                    <div class="comparison-growth">
-                        <div class="growth-bar">
-                            <div class="growth-fill" style="width: 100%; background: var(--gradient-primary);"></div>
-                        </div>
-                        <div class="growth-amount">$67,275</div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="comparison-insight animate-on-scroll">
-                <h4>📊 Key Takeaway</h4>
-                <p>
-                    By choosing stocks over savings, your $10,000 could grow to <strong>$67,275 instead of $11,050</strong> 
-                    in 20 years. That's <strong>$56,225 more</strong> just by making smarter investment choices! 
-                    Higher returns require accepting volatility—choose your comfort level.
-                </p>
-            </div>
-        </div>
-    </section>
+    /* Remove Flowise branding */
+    .flowise-chatbot-footer {
+      display: none !important;
+    }
+  `;
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// 1. SCROLL ANIMATIONS
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
 
-    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-         BEGINNER CHECKLIST
-         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
-    <section class="page-content">
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <span class="section-tag">ACTION PLAN</span>
-                <h2 class="section-title">Your First Investor Checklist</h2>
-                <p class="section-subtitle">
-                    Follow these steps to start investing like a pro.
-                </p>
-            </div>
-            
-            <div class="checklist-grid">
-                <div class="checklist-card animate-on-scroll">
-                    <div class="step-number">1</div>
-                    <h4>Emergency Fund First</h4>
-                    <p>Save 3-6 months expenses in a liquid account before investing. Don't invest money you might need urgently.</p>
-                    <div class="checklist-items">
-                        <label class="checklist-item">
-                            <input type="checkbox">
-                            <span>Save 3-6 months expenses</span>
-                        </label>
-                        <label class="checklist-item">
-                            <input type="checkbox">
-                            <span>Keep in high-yield savings</span>
-                        </label>
-                    </div>
-                </div>
-                
-                <div class="checklist-card animate-on-scroll">
-                    <div class="step-number">2</div>
-                    <h4>Choose a Broker</h4>
-                    <p>Pick a beginner-friendly platform with low fees. Popular options: Fidelity, Vanguard, Charles Schwab.</p>
-                    <div class="checklist-items">
-                        <label class="checklist-item">
-                            <input type="checkbox">
-                            <span>Research platforms</span>
-                        </label>
-                        <label class="checklist-item">
-                            <input type="checkbox">
-                            <span>Open account</span>
-                        </label>
-                    </div>
-                </div>
-                
-                <div class="checklist-card animate-on-scroll">
-                    <div class="step-number">3</div>
-                    <h4>Start Small</h4>
-                    <p>Invest your first dollar. Start with low amounts to build confidence. You can increase contributions anytime.</p>
-                    <div class="checklist-items">
-                        <label class="checklist-item">
-                            <input type="checkbox">
-                            <span>Buy your first ETF or stock</span>
-                        </label>
-                        <label class="checklist-item">
-                            <input type="checkbox">
-                            <span>Set up automatic contributions</span>
-                        </label>
-                    </div>
-                </div>
-                
-                <div class="checklist-card animate-on-scroll">
-                    <div class="step-number">4</div>
-                    <h4>Automate & Forget</h4>
-                    <p>Set monthly automatic investments. Let compound interest work. Don't obsess over daily prices.</p>
-                    <div class="checklist-items">
-                        <label class="checklist-item">
-                            <input type="checkbox">
-                            <span>Enable auto-invest</span>
-                        </label>
-                        <label class="checklist-item">
-                            <input type="checkbox">
-                            <span>Review quarterly only</span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
 
-    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-         COMMON MISTAKES
-         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
-    <section class="page-content">
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <span class="section-tag">AVOID THESE</span>
-                <h2 class="section-title">Beginner Investment Mistakes</h2>
-                <p class="section-subtitle">
-                    Learn from others' mistakes before they become yours.
-                </p>
-            </div>
-            
-            <div class="mistakes-grid">
-                <div class="mistake-card animate-on-scroll">
-                    <div class="mistake-icon">❌</div>
-                    <h4>Trying to Time the Market</h4>
-                    <p>
-                        Even professionals can't consistently time the market. You'll miss big gains waiting for perfect entry points. 
-                        Result: <strong>Miss 30% of best days = 2/3 less profit</strong>
-                    </p>
-                    <div class="mistake-tip">✓ Better: Dollar-cost average consistently</div>
-                </div>
-                
-                <div class="mistake-card animate-on-scroll">
-                    <div class="mistake-icon">❌</div>
-                    <h4>Panic Selling During Crashes</h4>
-                    <p>
-                        Markets crash ~20% every few years. Those who panic-sell lock in losses. 
-                        Those who hold recover in 2-3 years. <strong>Long-term investors always win</strong>
-                    </p>
-                    <div class="mistake-tip">✓ Better: Have a plan and stick to it</div>
-                </div>
-                
-                <div class="mistake-card animate-on-scroll">
-                    <div class="mistake-icon">❌</div>
-                    <h4>Paying High Fees</h4>
-                    <p>
-                        A 2% fee vs 0.2% fee means 10x less wealth over 30 years. $10k grows to $76k vs $38k. 
-                        <strong>Low-cost index funds are almost always better</strong>
-                    </p>
-                    <div class="mistake-tip">✓ Better: Choose low-fee ETFs and index funds</div>
-                </div>
-                
-                <div class="mistake-card animate-on-scroll">
-                    <div class="mistake-icon">❌</div>
-                    <h4>Putting All Eggs in One Stock</h4>
-                    <p>
-                        One company can collapse overnight. Diversification spreads risk. 
-                        <strong>Owning 500 companies (via index fund) means 1 failure = 0.2% loss</strong>
-                    </p>
-                    <div class="mistake-tip">✓ Better: Build a diversified portfolio</div>
-                </div>
-                
-                <div class="mistake-card animate-on-scroll">
-                    <div class="mistake-icon">❌</div>
-                    <h4>Chasing Hot Tips</h4>
-                    <p>
-                        Your uncle's "sure thing" stock or cryptocurrency is probably a scam or already overpriced. 
-                        Do your own research. <strong>Most traders underperform buy-and-hold investors</strong>
-                    </p>
-                    <div class="mistake-tip">✓ Better: Follow boring proven strategies</div>
-                </div>
-                
-                <div class="mistake-card animate-on-scroll">
-                    <div class="mistake-icon">❌</div>
-                    <h4>Starting Without an Emergency Fund</h4>
-                    <p>
-                        Emergency hits? If you invested all savings, you're forced to sell at loss. 
-                        <strong>Always have 3-6 months expenses liquid first</strong>
-                    </p>
-                    <div class="mistake-tip">✓ Better: Emergency fund → then invest</div>
-                </div>
-            </div>
-        </div>
-    </section>
+document.querySelectorAll('.animate-on-scroll').forEach(el => {
+    observer.observe(el);
+});
 
-    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-         LONG-TERM MINDSET
-         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
-    <section class="page-content">
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <span class="section-tag">WISDOM</span>
-                <h2 class="section-title">The Investor's Mindset</h2>
-                <p class="section-subtitle">
-                    Principles that separate successful long-term investors from traders.
-                </p>
-            </div>
-            
-            <div class="mindset-grid">
-                <div class="mindset-card animate-on-scroll">
-                    <div class="mindset-number">1</div>
-                    <h3>⏰ Time in Market</h3>
-                    <p>
-                        Time in market beats timing the market. Even if you invested right before a crash, 
-                        staying invested recovered your losses in 5-10 years historically.
-                    </p>
-                </div>
-                
-                <div class="mindset-card animate-on-scroll">
-                    <div class="mindset-number">2</div>
-                    <h3>🎯 Diversification</h3>
-                    <p>
-                        Don't put all eggs in one basket. Spread across stocks, bonds, sectors, geographies. 
-                        One bad investment won't destroy your portfolio.
-                    </p>
-                </div>
-                
-                <div class="mindset-card animate-on-scroll">
-                    <div class="mindset-number">3</div>
-                    <h3>😌 Emotional Control</h3>
-                    <p>
-                        Fear and greed are the enemies of wealth. Markets drop ~20% every few years. 
-                        Panic sellers lock in losses. Patient investors capture rebounds.
-                    </p>
-                </div>
-                
-                <div class="mindset-card animate-on-scroll">
-                    <div class="mindset-number">4</div>
-                    <h3>💰 Dollar-Cost Averaging</h3>
-                    <p>
-                        Invest fixed amounts regularly (e.g., $100/month) regardless of price. 
-                        Removes emotion and ensures you buy more when prices are low.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// 2. AI INVESTMENT GUIDE CHATBOT
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-         FOOTER
-         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-logo">GetRich</div>
-            <p class="footer-tagline">Building financial confidence, one youth at a time</p>
-            <p class="footer-team">Created by Team GetRich</p>
-            
-            <div class="footer-socials">
-                <a href="#" class="social-icon" title="Instagram">
-                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                </a>
-                <a href="#" class="social-icon" title="Twitter">
-                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417a9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
-                </a>
-                <a href="#" class="social-icon" title="LinkedIn">
-                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                </a>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2026 GetRich – Finance101. Empowering the next generation of financially savvy youths.</p>
-            </div>
-        </div>
-    </footer>
+const investingGuideResponses = {
+    investing: [
+        "Investing means putting your money into assets (stocks, bonds, real estate) to make it grow over time. It's how wealth compounds—your money makes money!",
+        "The stock market isn't gambling—it's ownership. When you buy a stock, you own a tiny piece of a company. As it grows, your piece becomes more valuable.",
+        "Investing early is the ultimate cheat code. $100/month starting at 18 = $1M+ by 65 with 7% returns. Start NOW. Seriously."
+    ],
+    stocks: [
+        "Stocks = ownership in companies. When you buy Apple stock, you literally own a tiny percentage of Apple. If Apple makes money, you make money.",
+        "Stock prices go up and down daily, but historically they've averaged ~10% yearly returns. The secret? Time in market > timing the market. Stay invested.",
+        "Individual stocks are risky because you're betting on one company. Better: diversify with index funds or ETFs that own hundreds of companies."
+    ],
+    etf: [
+        "ETFs (Exchange-Traded Funds) are baskets of stocks bundled together. Instead of picking 50 stocks, buy 1 ETF that holds them all. Instant diversification!",
+        "Popular beginner ETFs: VOO (tracks S&P 500), VTI (entire US market), VXUS (international). Low fees, automatic diversification. Perfect for starting out.",
+        "ETF returns historically average 8-10% yearly. Boring is beautiful. Set it and forget it. Let compound interest do the heavy lifting."
+    ],
+    bonds: [
+        "Bonds are loans you give to companies or governments. They pay you interest predictably. Lower returns than stocks (~3-5%) but much safer.",
+        "Why bonds? Stability. In your 20s-40s: 80/20 stocks/bonds. In your 50s-60s: 60/40 stocks/bonds. As you age, safety becomes more important.",
+        "Bond ladder: Buy bonds maturing at different times (2yr, 5yr, 10yr). When one matures, buy another at the end. Predictable income stream."
+    ],
+    crypto: [
+        "Cryptocurrency is digital money (Bitcoin, Ethereum, etc.). Extremely volatile, high reward/high risk. Don't invest more than you can afford to lose.",
+        "Crypto pros: 24/7 trading, decentralized, borderless. Crypto cons: Unregulated, scams everywhere, extreme price swings. 5-10% of portfolio max for beginners.",
+        "Bitcoin is 'digital gold'—limited supply, deflationary. Ethereum enables apps. Most others? Speculative. Do your research. DYOR (Do Your Own Research)."
+    ],
+    risk: [
+        "Risk tolerance = how much price swings stress you. Can't sleep over a 20% drop? Conservative portfolio (stocks/bonds mix). Love volatility? Aggressive.",
+        "Young + long timeline = can be aggressive. You have time to recover from crashes. At 18-25: 90% stocks, 10% bonds is reasonable. Age 30+: dial it back.",
+        "Diversification kills risk without killing returns. Don't put eggs in one basket. Stocks + bonds + crypto + real estate. Spread it around."
+    ],
+    compound: [
+        "Compound interest = 'interest on interest.' Einstein called it the 8th wonder of world. $100 → $109 (10% year 1) → $119 (10% year 2). Snowball effect!",
+        "The math: $1000 at 8% yearly = $1080 year 1, $1166 year 2, $1586 year 5, $4661 year 30. Time is your superpower. Start early, stay consistent.",
+        "This is why starting at 18 vs 28 = $500K+ difference by retirement. 10 years of compound interest is worth years of saving. Don't sleep on it."
+    ],
+    diversify: [
+        "Diversification = don't put all eggs in one basket. Own stocks, bonds, maybe real estate, maybe crypto. If one crashes, others survive.",
+        "Asset allocation matters more than picking winners. A boring portfolio (80% index funds, 20% bonds) beats 90% of professional investors. Seriously.",
+        "Rebalance annually. If stocks did great and now it's 85% of portfolio, sell some stocks, buy bonds to get back to 80/20. Lock in gains, maintain risk."
+    ],
+    default: [
+        "I'm here to help with investing fundamentals, risk tolerance, diversification, and building wealth. What would you like to learn?",
+        "Remember: investing isn't about getting rich quick—it's about getting rich for sure. Compound interest + time + consistency = generational wealth.",
+        "Start small. Invest consistently. Diversify. Ignore noise. Stay the course. That's literally the winning formula. You've got this."
+    ]
+};
 
-    <script src="JS/investing-agent.js"></script>
-</body>
-</html>
+function getInvestingGuideResponse(userMessage) {
+    const message = userMessage.toLowerCase();
+    
+    if (message.includes('investing') || message.includes('invest')) {
+        return investingGuideResponses.investing[Math.floor(Math.random() * investingGuideResponses.investing.length)];
+    } else if (message.includes('stock')) {
+        return investingGuideResponses.stocks[Math.floor(Math.random() * investingGuideResponses.stocks.length)];
+    } else if (message.includes('etf') || message.includes('fund')) {
+        return investingGuideResponses.etf[Math.floor(Math.random() * investingGuideResponses.etf.length)];
+    } else if (message.includes('bond')) {
+        return investingGuideResponses.bonds[Math.floor(Math.random() * investingGuideResponses.bonds.length)];
+    } else if (message.includes('crypto') || message.includes('bitcoin') || message.includes('ethereum')) {
+        return investingGuideResponses.crypto[Math.floor(Math.random() * investingGuideResponses.crypto.length)];
+    } else if (message.includes('risk') || message.includes('aggressive') || message.includes('conservative')) {
+        return investingGuideResponses.risk[Math.floor(Math.random() * investingGuideResponses.risk.length)];
+    } else if (message.includes('compound') || message.includes('interest') || message.includes('growth')) {
+        return investingGuideResponses.compound[Math.floor(Math.random() * investingGuideResponses.compound.length)];
+    } else if (message.includes('diversi')) {
+        return investingGuideResponses.diversify[Math.floor(Math.random() * investingGuideResponses.diversify.length)];
+    }
+    
+    return investingGuideResponses.default[Math.floor(Math.random() * investingGuideResponses.default.length)];
+}
 
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// 3. CHAT INPUT HANDLING
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
+const investChatInput = document.getElementById('investChatInput');
+const investSendBtn = document.getElementById('investSendBtn');
+const investChatMessages = document.getElementById('investChatMessages');
 
+function addChatMessage(text, isBot = false) {
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `message ${isBot ? 'bot' : 'user'}`;
+    
+    if (isBot) {
+        messageDiv.innerHTML = `
+            <div class="message-avatar">📈</div>
+            <div class="message-content">${text}</div>
+        `;
+    } else {
+        messageDiv.innerHTML = `<div class="message-content">${text}</div>`;
+    }
+    
+    investChatMessages.appendChild(messageDiv);
+    investChatMessages.scrollTop = investChatMessages.scrollHeight;
+}
+
+function handleInvestChatSubmit() {
+    const userMessage = investChatInput.value.trim();
+    if (!userMessage) return;
+    
+    // Add user message
+    addChatMessage(userMessage, false);
+    investChatInput.value = '';
+    
+    // Simulate typing and add bot response
+    setTimeout(() => {
+        const botResponse = getInvestingGuideResponse(userMessage);
+        addChatMessage(botResponse, true);
+    }, 500);
+}
+
+investSendBtn?.addEventListener('click', handleInvestChatSubmit);
+investChatInput?.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        handleInvestChatSubmit();
+    }
+});
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// 4. RISK PROFILE SLIDER
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+const riskSlider = document.getElementById('riskSlider');
+const conservativeProfile = document.getElementById('conservativeProfile');
+const balancedProfile = document.getElementById('balancedProfile');
+const aggressiveProfile = document.getElementById('aggressiveProfile');
+
+if (riskSlider && conservativeProfile && balancedProfile && aggressiveProfile) {
+    const showProfile = (value) => {
+        conservativeProfile.style.display = 'none';
+        balancedProfile.style.display = 'none';
+        aggressiveProfile.style.display = 'none';
+
+        // Map smooth slider (0-100) into 3 buckets
+        if (value <= 33) {
+            conservativeProfile.style.display = 'block';
+        } else if (value <= 66) {
+            balancedProfile.style.display = 'block';
+        } else {
+            aggressiveProfile.style.display = 'block';
+        }
+    };
+
+    // Initialize the profiles based on the starting slider position
+    showProfile(parseInt(riskSlider.value, 10));
+
+    riskSlider.addEventListener('input', (e) => {
+        const value = parseInt(e.target.value, 10);
+        showProfile(value);
+    });
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// 6. INVESTMENT CALCULATOR
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+function initCalculator() {
+    const initialInput = document.getElementById('initialInvestment');
+    const monthlyInput = document.getElementById('monthlyContribution');
+    const returnInput = document.getElementById('returnRate');
+    const timeframeInput = document.getElementById('timeframe');
+    
+    const initialValue = document.getElementById('initialValue');
+    const monthlyValue = document.getElementById('monthlyValue');
+    const returnValue = document.getElementById('returnValue');
+    const timeframeValue = document.getElementById('timeframeValue');
+    
+    const totalInvested = document.getElementById('totalInvested');
+    const futureValue = document.getElementById('futureValue');
+    const investmentGains = document.getElementById('investmentGains');
+    const calcInsight = document.getElementById('calcInsight');
+    
+    function calculateInvestment() {
+        const initial = parseFloat(initialInput.value) || 0;
+        const monthly = parseFloat(monthlyInput.value) || 0;
+        const rate = parseFloat(returnInput.value) / 100 || 0;
+        const years = parseFloat(timeframeInput.value) || 1;
+        const months = years * 12;
+        const monthlyRate = rate / 12;
+        
+        // Update display values
+        initialValue.textContent = initial.toLocaleString();
+        monthlyValue.textContent = monthly.toLocaleString();
+        returnValue.textContent = (rate * 100).toFixed(1);
+        timeframeValue.textContent = years;
+        
+        // Calculate future value with monthly contributions
+        let fv = 0;
+        if (monthlyRate > 0) {
+            fv = initial * Math.pow(1 + monthlyRate, months) + 
+                 monthly * (((Math.pow(1 + monthlyRate, months) - 1) / monthlyRate) * (1 + monthlyRate));
+        } else {
+            fv = initial + (monthly * months);
+        }
+        
+        const totalInv = initial + (monthly * months);
+        const gains = fv - totalInv;
+        
+        // Update results
+        totalInvested.textContent = '$' + totalInv.toLocaleString('en-US', { maximumFractionDigits: 0 });
+        futureValue.textContent = '$' + fv.toLocaleString('en-US', { maximumFractionDigits: 0 });
+        investmentGains.textContent = '+$' + gains.toLocaleString('en-US', { maximumFractionDigits: 0 });
+        
+        const gainPercent = ((gains / totalInv) * 100).toFixed(0);
+        calcInsight.innerHTML = `By investing $${initial.toLocaleString()} upfront and $${monthly.toLocaleString()}/month for ${years} years at ${(rate*100).toFixed(1)}% returns, you'll earn $${gains.toLocaleString('en-US', { maximumFractionDigits: 0 })} in pure gains—that's ${gainPercent}% profit!`;
+    }
+    
+    // Event listeners
+    initialInput?.addEventListener('input', calculateInvestment);
+    monthlyInput?.addEventListener('input', calculateInvestment);
+    returnInput?.addEventListener('input', calculateInvestment);
+    timeframeInput?.addEventListener('input', calculateInvestment);
+    
+    // Initial calculation
+    calculateInvestment();
+}
+
+document.addEventListener('DOMContentLoaded', initCalculator);
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// 7. PARALLAX SHAPES
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+const shapes = document.querySelectorAll('.gradient-shape');
+
+document.addEventListener('mousemove', (e) => {
+    const mouseX = e.clientX;
+    const mouseY = e.clientY;
+    
+    shapes.forEach((shape, index) => {
+        const offset = 50 + (index * 20);
+        const x = (mouseX / window.innerWidth) * offset - offset / 2;
+        const y = (mouseY / window.innerHeight) * offset - offset / 2;
+        
+        shape.style.transform = `translate(${x}px, ${y}px)`;
+    });
+});
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// 8. BACK NAVIGATION
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+const backButton = document.querySelector('.back-button');
+backButton?.addEventListener('click', (e) => {
+    // Smooth transition handled by browser default
+});
 
 
 
