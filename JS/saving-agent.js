@@ -1,8 +1,8 @@
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   GetRich – Finance101  
-   Saving Page Interactive JavaScript
-   AI Chatbot, Progress Trackers, Habit Management
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    GetRich – Finance101  
+    Saving Page Interactive JavaScript
+    Progress Trackers, Habit Management, Animations
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 
 // ━━━ INTERSECTION OBSERVER FOR SCROLL ANIMATIONS ━━━
 const observerOptions = {
@@ -22,129 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const animatedElements = document.querySelectorAll('.animate-on-scroll');
     animatedElements.forEach(el => observer.observe(el));
 });
-
-// ━━━ AI SAVING CHATBOT ━━━
-const savingChatInput = document.getElementById('savingChatInput');
-const savingSendBtn = document.getElementById('savingSendBtn');
-const savingChatMessages = document.getElementById('savingChatMessages');
-
-// Comprehensive saving advice responses
-const savingResponses = {
-    keywords: {
-        'emergency': [
-            "Building an emergency fund is crucial! Start with $500-$1000, then aim for 3-6 months of expenses. Automate $50-100/month transfers to make it effortless. 💪",
-            "Emergency funds protect you from debt. Keep it in a high-yield savings account. Start small—even $20/week adds up to over $1000/year!"
-        ],
-        'budget': [
-            "Try the 50/30/20 rule: 50% needs, 30% wants, 20% savings. Track expenses for a month first to see where your money actually goes. 📊",
-            "Budgeting doesn't mean restriction—it means intentional spending. Use apps like Mint or YNAB, or a simple spreadsheet works great!"
-        ],
-        'save': [
-            "Save automatically! Set up transfers right after payday. 'Pay yourself first' is the golden rule. What you don't see, you won't spend. ✨",
-            "Start with 10% of your income. Can't do 10%? Start with 5%. The key is consistency, not perfection. Increase gradually as you earn more."
-        ],
-        'debt': [
-            "Focus on high-interest debt first (avalanche method) or smallest balances (snowball method). Stop the bleeding—no new debt while paying off old! 🎯",
-            "If you have debt, save $1000 emergency fund first, then attack debt aggressively. This prevents new debt from emergencies."
-        ],
-        'invest': [
-            "Once you have 3 months emergency fund and no high-interest debt, start investing! Even $50/month in index funds grows significantly over time. 📈",
-            "Time in the market beats timing the market. Start early, be consistent. Consider low-cost ETFs or robo-advisors for beginners."
-        ],
-        'goal': [
-            "Break big goals into small milestones. Saving $5000? That's $417/month or $100/week. Celebrate each milestone to stay motivated! 🎉",
-            "Use separate savings accounts for different goals: emergency, travel, education. Seeing progress in each account keeps you motivated."
-        ],
-        'income': [
-            "Side hustles, freelancing, selling unused items—every extra dollar helps. But don't burn out. Focus on skills that scale your income long-term. 💼",
-            "Negotiate your salary, ask for raises, or upskill for better jobs. Earning more is just as important as spending less."
-        ],
-        'impulse': [
-            "Use the 24-hour rule: wait a day before non-essential purchases. Most impulse urges fade. Calculate cost per use to evaluate value. 🤔",
-            "Unsubscribe from marketing emails, avoid shopping 'for fun', and remove saved payment info. Make impulse buying harder!"
-        ]
-    },
-    default: [
-        "That's a great saving question! The key is to start small and build momentum. What specific saving challenge are you facing? 💰",
-        "I'd love to help you with that! To give you the best advice, could you tell me more about your current financial situation? 🎯",
-        "Every saving journey is unique. Whether it's building an emergency fund or saving for a goal, I'm here to guide you. What's your priority? ✨",
-        "Smart question! Saving is a skill that improves with practice. Let's work together to create a plan that fits your lifestyle. 💪"
-    ]
-};
-
-function getKeywordResponse(message) {
-    const lowerMessage = message.toLowerCase();
-    
-    // Check for keywords
-    for (const [keyword, responses] of Object.entries(savingResponses.keywords)) {
-        if (lowerMessage.includes(keyword)) {
-            return responses[Math.floor(Math.random() * responses.length)];
-        }
-    }
-    
-    // Return default response
-    return savingResponses.default[Math.floor(Math.random() * savingResponses.default.length)];
-}
-
-function addSavingUserMessage(message) {
-    const messageDiv = document.createElement('div');
-    messageDiv.className = 'message user';
-    messageDiv.innerHTML = `
-        <div class="message-avatar">😊</div>
-        <div class="message-content">${message}</div>
-    `;
-    savingChatMessages.appendChild(messageDiv);
-    savingChatMessages.scrollTop = savingChatMessages.scrollHeight;
-}
-
-function addSavingBotMessage(message) {
-    const typingDiv = document.createElement('div');
-    typingDiv.className = 'message bot';
-    typingDiv.innerHTML = `
-        <div class="message-avatar">💰</div>
-        <div class="typing-indicator">
-            <span class="typing-dot"></span>
-            <span class="typing-dot"></span>
-            <span class="typing-dot"></span>
-        </div>
-    `;
-    savingChatMessages.appendChild(typingDiv);
-    savingChatMessages.scrollTop = savingChatMessages.scrollHeight;
-    
-    // Replace with actual message after delay
-    setTimeout(() => {
-        typingDiv.innerHTML = `
-            <div class="message-avatar">💰</div>
-            <div class="message-content">${message}</div>
-        `;
-        savingChatMessages.scrollTop = savingChatMessages.scrollHeight;
-    }, 1200 + Math.random() * 800);
-}
-
-function sendSavingMessage() {
-    const message = savingChatInput.value.trim();
-    
-    if (message === '') return;
-    
-    addSavingUserMessage(message);
-    savingChatInput.value = '';
-    
-    // Get contextual response
-    const response = getKeywordResponse(message);
-    addSavingBotMessage(response);
-}
-
-if (savingSendBtn) {
-    savingSendBtn.addEventListener('click', sendSavingMessage);
-}
-
-if (savingChatInput) {
-    savingChatInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') {
-            sendSavingMessage();
-        }
-    });
-}
 
 // ━━━ EMERGENCY FUND TRACKER ANIMATION ━━━
 document.addEventListener('DOMContentLoaded', () => {
@@ -395,7 +272,6 @@ function simulateProgressUpdate() {
 // simulateProgressUpdate();
 
 console.log('💰 Saving Page loaded successfully!');
-console.log('✨ AI Saving Coach ready to help you build wealth!');
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // SAVINGS CALCULATOR
