@@ -67,13 +67,6 @@
           color: #f0fdfa !important;
         }
 
-        .flowise-chatbot-avatar img,
-        .flowise-chatbot-title-avatar img {
-          width: 36px !important;
-          height: 36px !important;
-          object-fit: contain;
-        }
-
         .flowise-chatbot-message.bot {
           background-color: #0f172a !important;
           color: #f0fdfa !important;
@@ -105,8 +98,7 @@
         bottom: 24,
         size: 52,
         dragAndDrop: true,
-        iconColor: 'white',
-        customIconSrc: 'images/getrich-logo.png',
+        iconColor: '#000000',   // black inner icon
         autoWindowOpen: {
           autoOpen: false
         }
@@ -115,7 +107,6 @@
       chatWindow: {
         showTitle: true,
         title: 'GetRich AI',
-        titleAvatarSrc: 'images/getrich-logo.png',
         welcomeMessage: 'Hello! Ask me anything about investing concepts.',
         backgroundColor: '#000000',
         width: 360,
@@ -125,13 +116,13 @@
         botMessage: {
           backgroundColor: '#0f172a',
           textColor: '#f0fdfa',
-          showAvatar: true
+          showAvatar: false
         },
 
         userMessage: {
           backgroundColor: '#14b8a6',
           textColor: '#ffffff',
-          showAvatar: true
+          showAvatar: false
         },
 
         textInput: {
@@ -770,6 +761,7 @@
     <script src="JS/investing-agent.js"></script>
 </body>
 </html>
+
 
 
 
