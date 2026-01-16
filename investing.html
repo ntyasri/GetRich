@@ -45,64 +45,60 @@
     <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
          AI INVESTING ASSISTANT
          ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
- <script type="module">
-  import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
+customCSS: `
+  /* Chat window background */
+  .flowise-chatbot-window {
+    background-color: #000000 !important;
+  }
 
-  Chatbot.init({
-    chatflowid: "64d96f61-a052-42e7-bbce-c3f03cab5e8d",
-    apiHost: "https://flowise-production-4b1a.up.railway.app",
+  /* Header bar */
+  .flowise-chatbot-header {
+    background-color: #000000 !important;
+    border-bottom: 1px solid #134e4a;
+  }
 
-    theme: {
-      button: {
-        backgroundColor: '#14b8a6', // teal
-        right: 24,
-        bottom: 24,
-        size: 52,
-        dragAndDrop: true,
-        iconColor: 'white',
-        customIconSrc:
-          'images/getrich-logo.png',
-        autoWindowOpen: {
-          autoOpen: false
-        }
-      },
+  /* Title text */
+  .flowise-chatbot-title {
+    color: #f0fdfa !important;
+  }
 
-      chatWindow: {
-        showTitle: true,
-        title: 'GetRich AI',
-        titleAvatarSrc:
-          'images/getrich-logo.png',
-        welcomeMessage:
-          'Hello! Ask me anything about investing concepts.',
-        backgroundColor: '#ffffff',
-        width: 380,
-        height: 520,
-        fontSize: 15,
+  /* Avatar sizing */
+  .flowise-chatbot-avatar img,
+  .flowise-chatbot-title-avatar img {
+    width: 36px !important;
+    height: 36px !important;
+    object-fit: contain;
+  }
 
-        botMessage: {
-          backgroundColor: '#f0fdfa', // light teal
-          textColor: '#134e4a',
-          showAvatar: true
-        },
+  /* Bot message bubble */
+  .flowise-chatbot-message.bot {
+    background-color: #0f172a !important;
+    color: #f0fdfa !important;
+  }
 
-        userMessage: {
-          backgroundColor: '#14b8a6',
-          textColor: '#ffffff',
-          showAvatar: true
-        },
+  /* User message bubble */
+  .flowise-chatbot-message.user {
+    background-color: #14b8a6 !important;
+    color: #ffffff !important;
+  }
 
-        textInput: {
-          placeholder: 'Type your question...',
-          backgroundColor: '#ffffff',
-          textColor: '#134e4a',
-          sendButtonColor: '#14b8a6'
-        }
-      }
-    }
-  })
-</script>
+  /* Input area */
+  .flowise-chatbot-input {
+    background-color: #000000 !important;
+    border-top: 1px solid #134e4a;
+  }
 
+  /* Input field */
+  .flowise-chatbot-input textarea {
+    background-color: #000000 !important;
+    color: #f0fdfa !important;
+  }
 
+  /* Placeholder text */
+  .flowise-chatbot-input textarea::placeholder {
+    color: #94a3b8 !important;
+  }
+`,
 
     <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
          INVESTING BASICS
@@ -728,6 +724,7 @@
     <script src="JS/investing-agent.js"></script>
 </body>
 </html>
+
 
 
 
