@@ -45,43 +45,103 @@
     <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
          AI INVESTING ASSISTANT
          ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
-    <section class="page-content ai-assistant-section">
-        <div class="container">
-            <div class="assistant-container">
-                <div class="section-header animate-on-scroll">
-                    <span class="section-tag">AI-POWERED</span>
-                    <h2 class="section-title">Your Investment Guide</h2>
-                    <p class="section-subtitle">
-                        Learn investing fundamentals and get personalized recommendations for your risk profile.
-                    </p>
-                </div>
-                
-                <div class="ai-chatbot-ui animate-on-scroll">
-                    <div class="chatbot-header">
-                        <div class="chatbot-avatar">📈</div>
-                        <div class="chatbot-info">
-                            <h4>GetRich Investment Coach</h4>
-                            <p>● Ready to help</p>
-                        </div>
-                    </div>
-                    
-                    <div class="chat-messages" id="investChatMessages">
-                        <div class="message bot">
-                            <div class="message-avatar">📈</div>
-                            <div class="message-content">
-                                Welcome to investing! 🎯 Don't worry—we'll keep it simple. Let me ask: are you investing for long-term growth or short-term goals?
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="chat-input-area">
-                        <input type="text" class="chat-input" placeholder="Ask about investing, stocks, ETFs..." id="investChatInput">
-                        <button class="chat-send-btn" id="investSendBtn">Send</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+   <flowise-fullchatbot></flowise-fullchatbot>
+
+<script type="module">
+  import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
+
+  Chatbot.initFull({
+    chatflowid: "64d96f61-a052-42e7-bbce-c3f03cab5e8d",
+    apiHost: "https://flowise-production-4b1a.up.railway.app",
+
+    theme: {
+      /* ===== Floating Button ===== */
+      button: {
+        backgroundColor: "#14b8a6",   // teal
+        right: 24,
+        bottom: 24,
+        size: 56,
+        dragAndDrop: true,
+        iconColor: "white",
+
+        // 🔥 GetRich logo
+        customIconSrc: "https://YOUR_GETRICH_LOGO_URL.png",
+
+        boxShadow: "0 0 20px rgba(45,212,191,0.9)",
+
+        autoWindowOpen: {
+          autoOpen: false,
+          openDelay: 2,
+          autoOpenOnMobile: false
+        }
+      },
+
+      /* ===== Tooltip ===== */
+      tooltip: {
+        showTooltip: true,
+        tooltipMessage: "Ask GetRich 💰",
+        tooltipBackgroundColor: "#020617",
+        tooltipTextColor: "#e5e7eb",
+        tooltipFontSize: 15
+      },
+
+      /* ===== Chat Window ===== */
+      chatWindow: {
+        showTitle: true,
+        title: "GetRich AI",
+        titleAvatarSrc: "https://YOUR_GETRICH_LOGO_URL.png",
+
+        welcomeMessage: "Hi 👋 I’m GetRich AI. Ask me about investing concepts.",
+        errorMessage: "Something went wrong. Please try again.",
+
+        backgroundColor: "#020617",
+        height: "100%",
+        width: "100%",
+        fontSize: 15,
+
+        starterPrompts: [
+          "What is investing?",
+          "How does risk work?",
+          "What is diversification?"
+        ],
+
+        /* ===== Bot Message ===== */
+        botMessage: {
+          backgroundColor: "#0f172a",
+          textColor: "#e5e7eb",
+          showAvatar: true,
+          avatarSrc: "https://YOUR_GETRICH_LOGO_URL.png"
+        },
+
+        /* ===== User Message ===== */
+        userMessage: {
+          backgroundColor: "#14b8a6",
+          textColor: "#020617",
+          showAvatar: true,
+          avatarSrc: "https://raw.githubusercontent.com/zahidkhawaja/langchain-chat-nextjs/main/public/usericon.png"
+        },
+
+        /* ===== Text Input ===== */
+        textInput: {
+          placeholder: "Ask GetRich something...",
+          backgroundColor: "#020617",
+          textColor: "#e5e7eb",
+          sendButtonColor: "#14b8a6",
+          autoFocus: true
+        },
+
+        /* ===== Footer ===== */
+        footer: {
+          textColor: "#94a3b8",
+          text: "Powered by",
+          company: "GetRich",
+          companyLink: "#"
+        }
+      }
+    }
+  })
+</script>
+
 
     <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
          INVESTING BASICS
@@ -707,3 +767,4 @@
     <script src="JS/investing-agent.js"></script>
 </body>
 </html>
+
